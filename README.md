@@ -1,5 +1,6 @@
 ## blog 
 ## 程序的运行
+> **注意：**该项目的启动依赖mongodb数据库，如果没有mongodb数据库启动server.js文件则会报错
 1. git克隆到本地；
 2. npm install 安装开发中所用到的模块；
 3. 运行dashige/server.js文件，此文件为node服务js文件；
