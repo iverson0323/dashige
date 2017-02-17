@@ -1,0 +1,195 @@
+<%- include include/header.html%>
+<main class="main">
+    <div class="mycontainer">
+        <div class="content-container">
+            <div class="content-left">
+                <div class="box" id="box">
+                    <div class="boxInner">
+                        <!--<div><imgs src="" realImg="imgs/banner1.jpg" alt=""></div>
+                        <div><imgs src="" realImg="imgs/banner2.jpg" alt=""></div>
+                        <div><imgs src="" realImg="imgs/banner3.jpg" alt=""></div>
+                        <div><imgs src="" realImg="imgs/banner4.jpg" alt=""></div>-->
+                    </div>
+                    <ul>
+                        <!--<li class="on"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>-->
+                    </ul>
+                    <a href="javascript:;" class="left"></a>
+                    <a href="javascript:;" class="right"></a>
+                </div>
+                <div class="row clearfix">
+                    <a class="col-xs-4 col-lg-3 back-drop" target="_blank"
+                       href="/c/8fQvXW?utm_medium=index-collections&amp;utm_source=desktop">
+                        <img src="http://upload.jianshu.io/collections/images/53/feng-shui-19-04.jpg?imageMogr2/auto-orient/strip%7CimageView2/1/w/195/h/195"
+                             alt="195">
+                        <div class="name">心理</div>
+                        <div class="mask"></div>
+                    </a> <a class="col-xs-4 col-lg-3 back-drop" target="_blank"
+                            href="/c/e7d2d4045b36?utm_medium=index-collections&amp;utm_source=desktop">
+                    <img src="http://upload.jianshu.io/collections/images/75/22.jpg?imageMogr2/auto-orient/strip%7CimageView2/1/w/195/h/195"
+                         alt="195">
+                    <div class="name">历史</div>
+                    <div class="mask"></div>
+                </a> <a class="col-xs-4 col-lg-3 back-drop" target="_blank"
+                        href="/c/RfYyQj?utm_medium=index-collections&amp;utm_source=desktop">
+                    <img src="http://upload.jianshu.io/collections/images/12/1239240801.jpg?imageMogr2/auto-orient/strip%7CimageView2/1/w/195/h/195"
+                         alt="195">
+                    <div class="name">散文</div>
+                    <div class="mask"></div>
+                </a> <a class="col-xs-4 col-lg-3 back-drop" target="_blank"
+                        href="/c/8b493334965e?utm_medium=index-collections&amp;utm_source=desktop">
+                    <img src="http://upload.jianshu.io/collections/images/268191/%E4%BD%93%E8%82%B2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/1/w/195/h/195"
+                         alt="195">
+                    <div class="name">体育</div>
+                    <div class="mask"></div>
+                </a> <a class="col-xs-4 col-lg-3 back-drop" target="_blank"
+                        href="/c/e2XTpa?utm_medium=index-collections&amp;utm_source=desktop">
+                    <img src="http://upload.jianshu.io/collections/images/20/%E5%9B%BE.jpg?imageMogr2/auto-orient/strip%7CimageView2/1/w/195/h/195"
+                         alt="195">
+                    <div class="name">青春</div>
+                    <div class="mask"></div>
+                </a> <a class="col-xs-4 col-lg-3 back-drop" target="_blank"
+                        href="/c/Jgq3Wc?utm_medium=index-collections&amp;utm_source=desktop">
+                    <img src="http://upload.jianshu.io/collections/images/28/%E4%B8%8A%E7%8F%AD%E8%BF%99%E7%82%B9%E4%BA%8B%E5%84%BF.jpeg?imageMogr2/auto-orient/strip%7CimageView2/1/w/195/h/195"
+                         alt="195">
+                    <div class="name">上班这点事儿</div>
+                    <div class="mask"></div>
+                </a> <a class="col-xs-4 col-lg-3 back-drop" target="_blank"
+                        href="/c/Df7njb?utm_medium=index-collections&amp;utm_source=desktop">
+                    <img src="http://upload.jianshu.io/collections/images/25/2005503_162125081_2.jpg?imageMogr2/auto-orient/strip%7CimageView2/1/w/195/h/195"
+                         alt="195">
+                    <div class="name">谈写作</div>
+                    <div class="mask"></div>
+                </a>
+                    <a class="col-xs-4 col-lg-3" target="_blank"
+                       href="/recommendations/collections?utm_medium=index-collections&amp;utm_source=desktop">
+                        <div class="more-hot-collection">更多热门专题 <i class="iconfont ic-link"></i></div>
+                    </a></div>
+                <%articles.forEach(function(item,index){%>
+                    <div class="note-item">
+                    <div class="top">
+                        <a href="<%=item.authorUrl%>">
+                            <img class="user-avatar" src="<%=item.avatarSrc%>" alt="<%=item.avatarSrc%>">
+                            <span class="username"><%=item.author%></span>
+                        </a>
+                        <span class="create-time"><%=item.createAt.toLocaleString()%></span>
+                    </div>
+                    <div class="middle clearfix">
+                        <div class="left">
+                            <a class="title" href="<%=item.url%>">
+                                <%=item.title%>
+                            </a>
+                            <p class="description">
+                                <%=item.abstract.length>150?item.abstract.slice(0,150)+'...':item.abstract%>
+                            </p>
+                        </div>
+                        <div class="right">
+                            <a href="<%=item.url%>"><img class="book-avatar" src="<%=item.imgSrc%>" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <a class="category" href="<%=item.categoryUrl%>"><%=item.category%></a>
+                        <div>
+                            <a href="<%=item.url%>">
+                                <span class="read-num"></span>
+                                <span>2367</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="<%=item.url%>#comments">
+                                <span class="comment"></span>
+                                <span>124</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <span class="like"></span>
+                                <span>680</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+                <!--分页区-->
+                <div class="mypagination clearfix">
+
+                    <%if(pageNum > 1){%>
+                        <li class=""><a class="laquo" href="/?keyword=<%=keyword%>&pageNum=<%=pageNum-1%>&pageSize=<%=pageSize%>">&laquo;</a></li>
+                    <%}%>
+                    <%for(var i=1; i<=totalPages; i++){%>
+                        <li class="<%=pageNum==i?'active':''%>"><a href="/?keyword=<%=keyword%>&pageSize=<%=pageSize%>&pageNum=<%=i%>"><%=i%></a></li>
+                    <%}%>
+                    <%if(pageNum < totalPages){%>
+                        <li ><a class="raquo" href="/?keyword=<%=keyword%>&pageNum=<%=pageNum+1%>&pageSize=<%=pageSize%>">&raquo;</a></li>
+                    <%}%>
+
+
+
+
+
+                </div>
+
+
+
+
+                <!--<div class="note-item">-->
+                    <!--<div class="top">-->
+                        <!--<a href="">-->
+                            <!--<img class="user-avatar" src="/3.jpg" alt="">-->
+                            <!--<span class="username">会飞的狼</span>-->
+                        <!--</a>-->
+                        <!--<span class="create-time">前天09:27</span>-->
+                    <!--</div>-->
+                    <!--<div class="middle clearfix">-->
+                        <!--<div class="left">-->
+                            <!--<a class="title" href="">-->
+                                <!--2016，读完了100多本书，浏览了三百本，向你推荐这九本-->
+                            <!--</a>-->
+                            <!--<p class="description">-->
+                                <!--1、《新月集·飞鸟集》﻿﻿-->
+                                <!--两部诗的合集，“新月集“形散意聚，充满了童心纯净与趣味，蕴含着无尽的母爱，至美不过如此。飞鸟集包含了多首哲理小诗，琢磨起来颇有趣味。这位与与纪伯伦...-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <!--<div class="right">-->
+                            <!--<a href=""><img class="book-avatar" src="/book.jpg" alt=""></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="bottom">-->
+                        <!--<a class="category" href="">读书</a>-->
+                        <!--<div>-->
+                            <!--<a href="">-->
+                                <!--<span class="read-num"></span>-->
+                                <!--<span>123</span>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<a href="">-->
+                                <!--<span class="comment"></span>-->
+                                <!--<span>28</span>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<a href="">-->
+                                <!--<span class="like"></span>-->
+                                <!--<span>120</span>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="content-right">
+
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/tab.js"></script>
+<script>
+    var tab1 = new Tab({
+        id: 'box'
+    });
+</script>
+<%- include include/footer.html%>

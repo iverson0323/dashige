@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="/lib/themes/readable.min.css">-->
+    <link rel="stylesheet" href="/css/detail.css">
+    <title><%=title%></title>
+</head>
+<body>
+
+<div class="top">
+    <div class="zk-container">
+
+        <div><h1 class="title"><%=article.title%></h1></div>
+        <div class="userInfo clearfix">
+            <div class="userAvatar">
+                <img class="avatar" src="<%=article.avatarSrc%>" alt="<%=article.avatarSrc%>">
+            </div>
+            <div class="info">
+                <p><span class="author">作者</span><span class="authorName"><a href="<%=article.authorUrl%>"><%=article.author%></a></span></p>
+                <p class="last"><span class="time"><%=article.createAt.toLocaleString()%></span><span class="length">字数:<%=article.content.length%></span></p>
+            </div>
+        </div>
+        <%if(user._id && user._id==article.user){%>
+        <div>
+            <a class="same delete" href="/article/delete/<%=article._id%>">删除文章</a>
+            <a class="same update" href="/article/update/<%=article._id%>">编辑文章</a>
+        </div>
+        <%}%>
+    </div>
+</div>
+<xmp theme=""><%=article.content%></xmp>
+<div class="bottom">
+    <div id="comments">
+        <div class="zk-container">
+            <div class="line">
+                <h3>留言区</h3>
+            </div>
+            <div class="writeComments">
+                <div class="userAvatar clearfix">
+                    <img class="avatar" src="<%=user.avatar%>" alt="<%=user.avatar%>">
+                </div>
+                <div class="ta">
+                    <form action="/comments/<%=user._id%>" method="post">
+                        <div class="input" style="">
+                            <textarea name="comment"  class="" style="margin-left:30px;width: 95%;height: 100px;word-wrap: break-word;word-break: break-all;display: block;font-size: 18px;padding: 15px" placeholder="<%=user?'写下你的评论...':'请登录后再来评论哈。'%>"></textarea>
+                        </div>
+                        <div class="commentBtn">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/lib/strapdown.js"></script>
+<script src="/lib/jquery.min.js"></script>
+<script src="/js/detail.js"></script>
+</body>
+</html>

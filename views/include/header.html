@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <link rel="stylesheet/less" href="/css/pipi.less">
+    <script src="/lib/less.min.js"></script>
+</head>
+<body>
+<header class="header">
+    <nav class="myNavbar">
+        <div class="mycontainer">
+            <div class="logo">
+                <h1 class=""><a href="/">大师哥</a></h1>
+            </div>
+            <div class="content-container">
+                <ul class="mynav mynav-left">
+                    <li><a href="/">首页</a></li>
+                    <li class="form">
+                        <form action="/">
+                            <input type="search" placeholder="搜索" value="<%=locals.keyword%>" autocomplete="off" name="keyword" class="search">
+                            <input type="submit" value="查询" class="submit">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <ul class="mynav mynav-right">
+                <%if(user){%>
+                <li class="loginUser">
+                    <a class="img" href=""><img src="<%=user.avatar%>" alt="<%=user.avatar%>"></a>
+                    <span class="more"></span>
+                    <ul class="menu">
+                        <li><a href="/user/logout">退出</a></li>
+                    </ul>
+                </li>
+                <%}else{%>
+                <li><a href="/user/login">登录</a></li>
+                <li><a href="/user/signup">注册</a></li>
+                <%}%>
+                <li class="writeLi"><a class="write" href="/article/add">写文章</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="">
+        <%if(success){%>
+            <div class="info-tip success infoDown"><%=success%></div>
+        <%}else if(error){%>
+            <div class="info-tip error infoDown"><%=error%></div>
+        <%}%>
+    </div>
+</header>

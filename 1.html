@@ -1,0 +1,54 @@
+<h2>3. 模板字符串</h2>
+
+<p><code>
+let name = &#39;zfpx&#39;;</code>
+let age = 8
+let str = `${name} is ${age} years old!`; //--&gt; zfpx is 8 years old!
+</code>
+<code>
+//标签拼接的妙用，不需要进行转义，还可以使其外观看起来整洁
+let html = `&lt;ul&gt;
+                &lt;li&gt;zfpx1&lt;/li&gt;
+                &lt;li&gt;zfpx2&lt;/li&gt;
+            &lt;/ul&gt;`;
+</code>
+模板字符串原理
+<code>
+function parse(str) {
+    return str.replace(/\${(\w+)}/g, function () {
+        return eval(arguments[1]);   //eval用于计算表达式的值
+    });
+}
+</code></p>
+
+<h2>4. 箭头函数</h2>
+
+<p>1 )箭头函数的使用
+<code></code>`
+//如果有且仅有一个参数，那么参数列表可以不用小括号包裹
+let double = num =&gt; num<em>2; //箭头右边没有花括号时相当于有返回值--&gt;return num </em> 2;
+console.log(double(2)); // --&gt; 4</p>
+
+<p>//如果多于一个参数，或者没有参数的话，参数列表需要用小括号包裹
+let add = (a,b) =&gt; a+b; //没有花括号就等价于 return a + b;
+console.log(add(1,2));</p>
+
+<p>//如果函数体不只有返回值的话，那么需要用花括号包裹，且如果有返回值还必须用return
+let add = (a,b) =&gt; {
+    console.log(a,b);
+    return a+b;
+}
+<code>
+2）箭头函数没有自己的this指向，会引用外层的this
+</code>
+let obj = {
+    name: &#39;zfpx&#39;,
+    getName(){
+        console.log(this);
+        // 箭头函数没有自己this指针，只会引用外层的this指针
+        setTimeout(() =&gt; {
+            console.log(this);//window 报错 本身(timer对象本身)
+        }, 2000);
+    }
+};
+<code></code>`</p>

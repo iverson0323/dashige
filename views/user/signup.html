@@ -1,0 +1,34 @@
+<%- include ../include/header.html%>
+<link rel="stylesheet" href="/css/signup.css">
+<main class="main">
+    <div class="container">
+        <div class="form tag">
+            <div class="form-group">
+                <span class="inputName">用户名:</span>
+                <input type="text" class="username" placeholder="昵称/账号" autocomplete="off">
+                <span class="info"></span>
+            </div>
+            <div class="form-group">
+                <span class="inputName">密码:</span>
+                <input type="password" class="initial_password" placeholder="密码" autocomplete="off">
+                <span class="info"></span>
+            </div>
+            <div class="form-group">
+                <span class="inputName">确认密码:</span>
+                <input type="password" class="confirm_password" placeholder="确认密码" autocomplete="off">
+                <span class="info"></span>
+            </div>
+            <div class="form-group">
+                <span class="inputName">邮箱:</span>
+                <input type="email" class="email" placeholder="邮箱" autocomplete="off">
+                <span class="info"></span>
+            </div>
+            <div class="form-group btn-group">
+                <button type="submit" class="btn">立即注册</button>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/lib/jquery.min.js"></script>
+<script src="/js/signup.js"></script>
+<%- include ../include/footer.html%>

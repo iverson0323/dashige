@@ -1,0 +1,23 @@
+<%- include ../include/header.html%>
+<link rel="stylesheet" href="/css/simplemde.min.css">
+<link rel="stylesheet" href="/css/markdown.css">
+<main class="main">
+    <div class="mycontainer">
+        <div class="add-content" style="">
+            <form action="" method="post">
+                <div class="title">
+                    <input type="text" name="title" value="<%=article.title%>" placeholder="文章的标题" autocomplete="off" required>
+                </div>
+                <div class="content">
+                    <textarea id="myTextArea" name="content"><%=article.content%></textarea>
+                </div>
+                <div class="btn">
+                    <input type="submit" value="立即发表">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script src="/lib/simplemde.min.js"></script>
+<script src="/js/add.js"></script>
+<%- include ../include/footer.html%>

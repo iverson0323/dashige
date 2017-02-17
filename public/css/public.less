@@ -1,0 +1,40 @@
+@headerH: 50px;
+@headerAcolor: #5b4282;
+@liColor: #F9F9F9;
+
+.boxShadowFn(@x,@y,@blur,@radius,@color) {
+  -webkit-box-shadow: @x @y @blur @radius @color;
+  -moz-box-shadow: @x @y @blur @radius @color;
+  box-shadow: @x @y @blur @radius @color;
+}
+
+.boxSizingFn() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.transitionFn(@propery:all,@time:1s,@effect:ease,@delay:0) {
+  -webkit-transition: @propery @time @effect @delay;
+  -moz-transition: @propery @time @effect @delay;
+  -ms-transition: @propery @time @effect @delay;
+  -o-transition: @propery @time @effect @delay;
+  transition: @propery @time @effect @delay;
+}
+
+.borderRadiusFn(@param) {
+  -webkit-border-radius: @param;
+  -moz-border-radius: @param;
+  border-radius: @param;
+}
+
+.animationFn(@name,@time,@effect:ease,@count:1) {
+  -webkit-animation: @name @time @effect @count;
+  -o-animation: @name @time @effect @count;
+  animation: @name @time @effect @count;
+}
+
+.backgroundSizeFn(@width,@height) {
+  -webkit-background-size: @width, @height;
+  background-size: @width, @height;
+}

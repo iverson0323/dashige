@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="" id="input" oninput="this.editor.update()" cols="30" rows="10">这个this是什么意思...</textarea>
+<div id="preview"></div>
+<script>
+    function $(id){return document.getElementById(id)}
+
+    function Editor(input, preview) {
+        this.update = function () {
+            preview.innerHTML = input.value;
+        };
+        input.editor = this;
+        this.update();
+    }
+
+    new Editor($('input'), $('preview'));
+
+
+</script>
+</body>
+</html>
