@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>-->
+</head>
+<body>
+<textarea name="" oninput="this.method.update()" id="input" cols="30" rows="10">this指向....</textarea>
+<div id="preview"></div>
+<script>
+    function Editor(input,preview) {
+        this.update = function () {
+            preview.innerHTML = input.value;
+        };
+        input.method = this;
+        this.update();
+    }
+
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    new Editor($('input'), $('preview'));
+
+
+
+
+</script>
+</body>
+</html>
